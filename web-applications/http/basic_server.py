@@ -1,5 +1,4 @@
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class RequestHandler(BaseHTTPRequestHandler):
 
@@ -12,7 +11,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        print self.command, self.path, self.headers
+        print (self.command, self.path, self.headers)
 
         self._set_headers()
         self.wfile.write("<html><body><h1>hi!</h1></body></html>")

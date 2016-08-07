@@ -1,9 +1,10 @@
-# Set the path
 import os, sys
+from flask_script import Manager, Server
+
+# append parent module also in the sys.path in order to make it available while py module lookup (win same directory)
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from flask.ext.script import Manager, Server
-from tu
+from tumblelog import app
 
 manager = Manager(app)
 
